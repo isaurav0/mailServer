@@ -130,23 +130,29 @@ function loadMessage(id, mailbox){
 
       var subject = document.createElement("h5")
       subject.className = "email-detail"
-      subject.innerHTML = "Subject&nbsp : &nbsp&nbsp &nbsp " + "<b>" + res.data.subject + "</b>"
+      subject.innerHTML = "Subject&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp : &nbsp&nbsp &nbsp " + "<b>" + res.data.subject + "</b>"
 
       var sender = document.createElement('h5')
       sender.className = "email-detail"
-      sender.innerHTML = "Sender&nbsp : &nbsp&nbsp &nbsp" + "<b>" + res.data.sender + "</b>"
+      sender.innerHTML = "Sender&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp : &nbsp&nbsp &nbsp" + "<b>" + res.data.sender + "</b>"
+
+      var recipients = document.createElement("h5")
+      recipients.className = "email-detail"
+      recipients.innerHTML = "Recipients&nbsp : &nbsp&nbsp &nbsp" + "<b>" + res.data.recipients + "</b>"
 
       var date = document.createElement("h5")
       date.className = "email-detail"
-      date.innerHTML = "Date &nbsp&nbsp  &nbsp : &nbsp&nbsp &nbsp " + "<b>" + res.data.timestamp + "</b>"
+      date.innerHTML = "Date &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp : &nbsp&nbsp &nbsp " + "<b>" + res.data.timestamp + "</b>"
 
       var body = document.createElement("div")
       body.className = "email-detail"
       body.style.fontSize = "20px"
       body.innerHTML = res.data.body.replace(/\n/g, '<br>')
 
+
       box.appendChild(subject)
       box.appendChild(sender)
+      box.appendChild(recipients)
       box.appendChild(date)
       box.appendChild(body)
 
