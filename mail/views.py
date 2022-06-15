@@ -24,6 +24,7 @@ def index(request):
 @csrf_exempt
 @login_required
 def compose(request):
+    print("inside compose")
     
     # Composing a new email must be via POST
     if request.method != "POST":
